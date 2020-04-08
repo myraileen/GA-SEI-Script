@@ -1,0 +1,23 @@
+{% extends 'script/base.html' %} {% block content %}
+
+<h2>
+  {{ chapter.chapter }}
+  <!-- <a href="{% url 'chapter_edit' pk=chapter.pk%}">(edit)</a> -->
+</h2>
+<div>
+  <!-- <a href="{% url 'chapter_delete' pk=chapter.pk %}">DELETE</a> -->
+</div>
+<!-- <h3>Verses <a href="{% url 'verse_create' %}">(+)</a></h3> -->
+
+<ul>
+  {% for chapter in chapter.verses.all %}
+
+  <li>
+    <a href="">{{ chapter.description }}</a>
+    <img src="{{ chapter.image_url }}" alt="" class="artist-photo" />
+  </li>
+
+  {% endfor %}
+</ul>
+
+{% endblock %}

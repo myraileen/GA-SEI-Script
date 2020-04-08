@@ -8,7 +8,7 @@
   {% for chapter in chapters %}
 
   <li>
-    <a href="">{{ chapter.chapter_num }}</a>
+    <a href="{% url 'chapter_detail' pk=chapter.id %}">{{ chapter.chapter }}</a>
   </li>
 
   {% endfor %}
