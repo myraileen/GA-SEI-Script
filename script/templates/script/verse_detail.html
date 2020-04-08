@@ -1,0 +1,13 @@
+{% extends 'script/base.html' %} {% block content %}
+
+<h2>
+  <a href="{% url 'chapter_detail' pk=verse.chapter.pk %}">
+    {{ verse.chapter.book }} Chapter {{ verse.chapter.chapter_num }}
+  </a>
+</h2>
+<h3>
+    Verse {{ verse.verse_num }}. {{ verse.verse }}
+  <a href="{% url 'verse_edit' pk=verse.pk %}">(edit verse)</a>
+  <a href="{% url 'verse_delete' pk=verse.pk %}">(delete verse)</a>
+</h3>
+{% endblock %}

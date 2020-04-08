@@ -1,0 +1,14 @@
+{% extends 'script/base.html' %} {% block content %}
+
+<h2>All Verses
+    <a class="controls" href="{% url 'verse_create' %}">(add verse)</a>
+</h2>
+<ol>
+  {% for verse in verses %}
+  <li>
+    <a href="{% url 'verse_detail' pk=verse.pk %}">{{ verse.verse }}</a>
+  </li>
+  {% endfor %}
+</ol>
+
+{% endblock %}

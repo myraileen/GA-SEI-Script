@@ -1,23 +1,21 @@
 {% extends 'script/base.html' %} {% block content %}
-
 <h2>
-    {{ chapter.book }}  {{ chapter.chapter_num }}
-  <a href="{% url 'chapter_edit' pk=chapter.pk%}">(edit)</a>
+    {{ chapter.book }} {{ chapter.chapter_num }}
+    <a class="controls" href="{% url 'chapter_edit' pk=chapter.pk%}">(edit chapter)</a>
+    <a class="controls" href="{% url 'chapter_delete' pk=chapter.pk%}">(delete chapter)</a>
 </h2>
-<div>
-  <a href="{% url 'chapter_delete' pk=chapter.pk %}">DELETE</a>
-</div>
-
-
+<p>
+    {{ chapter.description }}
+</p>
+<h3>Verses
+    <a class="controls" href="{% url 'verse_create' %}">(add verse)</a>
+</h3>
 <ol>
   {% for verse in chapter.verses.all %}
-
   <li>
-    <a href="">{{ verse.verse }}</a>
+    <a href="{% url 'verse_detail' pk=verse.pk %}">{{ verse.verse }}</a>
     <img src="{{ verse.image_url }}" alt="" class="artist-photo" />
   </li>
-
   {% endfor %}
 </ol>
-
 {% endblock %}

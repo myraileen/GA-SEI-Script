@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 
 from .models import Chapter, Verse
-from .forms import ChapterForm
+from .forms import ChapterForm, VerseForm
 
-# Create your views here.
+# Chapter Views
 def chapter_list(request):
     chapters = Chapter.objects.order_by('chapter_num') 
     return render(request, 'script/chapter_list.html', {'chapters': chapters})
@@ -36,3 +36,37 @@ def chapter_edit(request, pk):
 def chapter_delete(request,pk):
     Chapter.objects.get(id=pk).delete()
     return redirect('chapter_list')
+
+# Verse Views
+def verse_list(request):
+    verses = Verse.objects.order_by('verse_num') 
+    return render(request, 'script/verse_list.html', {'verses': verses})
+
+def verse_detail(request, pk):
+    verse = Verse.objects.get(id=pk)
+    return render(request, 'script/verse_detail.html', {'verse': verse})
+
+def verse_create(request):
+    if request.method == 'POST':
+        form = VerseForm(request.POST)
+        if form.is_valid():
+            verse = form.save()
+            return redirect('verse_detail', pk=verse.pk)
+    else:
+        form = VerseForm()
+    return render(request, 'script/verse_form.html', {'form': form})
+
+def verse_edit(request, pk):
+    verse = Verse.objects.get(pk=pk)
+    if request.method == "POST":
+        form = VerseForm(request.POST, instance=verse)
+        if form.is_valid():
+            verse = form.save()
+            return redirect('verse_detail', pk=verse.pk)
+    else:
+        form = VerseForm(instance=verse)
+    return render(request, 'script/verse_form.html', {'form': form})
+
+def verse_delete(request,pk):
+    Verse.objects.get(id=pk).delete()
+    return redirect('verse_list')
