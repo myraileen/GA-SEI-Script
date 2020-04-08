@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
-from .models import Chapter
+from .models import Chapter, Verse
 
 # Create your views here.
 def chapter_list(request):
-    decades = Decade.objects.order_by('start_year') 
-    return render(request, 'nostaldja/decade_list.html', {'decades': decades})
+    chapters = Chapter.objects.order_by('start_year') 
+    return render(request, 'script/chapter_list.html', {'chapters': chapters})

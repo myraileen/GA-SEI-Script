@@ -6,7 +6,7 @@ class Book(models.Model):
     book_num = models.PositiveSmallIntegerField()
     book = models.CharField(max_length = 200)
     description = models.TextField()
-    image_url = models.TextField(default='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQSn_PGAQyYvtHTjh61RcvlKIgtFDM2e0IWg8bRMUvS1Bo0_kY5&usqp=CAU')
+    image_url = models.TextField(default='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQSn_PGAQyYvtHTjh61RcvlKIgtFDM2e0IWg8bRMUvS1Bo0_kY5&usqp=CAU', null=True)
 
     def __str__(self):
         return self.book
@@ -17,7 +17,7 @@ class Chapter(models.Model):
     chapter_num = models.PositiveSmallIntegerField()
     chapter = models.TextField()
     description = models.TextField()
-    image_url = models.TextField(default='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT77EfsaCllx-L584gO4MMywRWSr9VyPJxYJhveXHYCppsPNgLP&usqp=CAU')
+    image_url = models.TextField(default='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT77EfsaCllx-L584gO4MMywRWSr9VyPJxYJhveXHYCppsPNgLP&usqp=CAU', null=True)
 
     def __str__(self):
         return self.chapter
@@ -27,7 +27,7 @@ class Verse(models.Model):
     chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE, related_name='verses')
     verse_num = models.PositiveSmallIntegerField()
     verse = models.TextField()
-    image_url = models.TextField()
+    image_url = models.TextField(null=True)
 
     def __str__(self):
         return self.verse
