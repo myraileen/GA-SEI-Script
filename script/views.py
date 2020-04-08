@@ -20,7 +20,7 @@ def chapter_create(request):
             return redirect('chapter_detail', pk=chapter.pk)
     else:
         form = ChapterForm()
-    return render(request, 'nostaldja/chapter_form.html', {'form': form})
+    return render(request, 'script/chapter_form.html', {'form': form})
 
 def chapter_edit(request, pk):
     chapter = Chapter.objects.get(pk=pk)
@@ -31,7 +31,7 @@ def chapter_edit(request, pk):
             return redirect('chapter_detail', pk=chapter.pk)
     else:
         form = ChapterForm(instance=chapter)
-    return render(request, 'nostaldja/chapter_form.html', {'form': form})
+    return render(request, 'script/chapter_form.html', {'form': form})
 
 def chapter_delete(request,pk):
     Chapter.objects.get(id=pk).delete()

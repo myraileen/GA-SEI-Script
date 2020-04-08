@@ -6,7 +6,7 @@ class ChapterForm(forms.ModelForm):
 
     class Meta:
         model = Chapter
-        fields = ('book','chapter','description','image_url')
+        fields = ('book','chapter_num','chapter','description','image_url')
 
 class VerseForm(forms.ModelForm):
 

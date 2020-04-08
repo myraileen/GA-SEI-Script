@@ -1,14 +1,14 @@
 
 {% extends 'script/base.html' %} {% block content %}
 
-<h2>Chapters <a href="">(+)</a></h2>
+<h2>Chapters <a href="{% url 'chapter_create' %}">(+)</a></h2>
 
 <ul>
     
   {% for chapter in chapters %}
 
   <li>
-    <a href="{% url 'chapter_detail' pk=chapter.id %}">{{ chapter.chapter }}</a>
+    <a href="{% url 'chapter_detail' pk=chapter.id %}"> {{ chapter.book }} {{ chapter.chapter_num }}</a>
   </li>
 
   {% endfor %}
