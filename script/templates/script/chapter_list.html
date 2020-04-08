@@ -1,0 +1,18 @@
+
+<!-- {% extends 'script/base.html' %} {% block content %} -->
+
+<h2>Chapters <a href="">(+)</a></h2>
+
+<ul>
+    
+  {% for chapter in chapters %}
+
+  <li>
+    <a href="">{{ chapter.chapter_num }}</a>
+  </li>
+
+  {% endfor %}
+
+</ul>
+
+<!-- {% endblock %} -->
