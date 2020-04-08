@@ -1,6 +1,6 @@
 from django.db import models
 
-# Chapter
+# Book
 class Book(models.Model):
     version = models.TextField()
     book_num = models.PositiveSmallIntegerField()
@@ -11,7 +11,7 @@ class Book(models.Model):
     def __str__(self):
         return self.book
 
-# Book
+# Chapter
 class Chapter(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='chapters')
     chapter_num = models.PositiveSmallIntegerField()
