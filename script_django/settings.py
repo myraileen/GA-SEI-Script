@@ -25,7 +25,7 @@ SECRET_KEY = 'tovdzn)hw#3*uuiv-q6p8ul@f(k$0to$#bdd8c%s271xujn5vc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://chapverse.herokuapp.com/']
 
 LOGIN_REDIRECT_URL = '/'
 
