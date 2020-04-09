@@ -1,4 +1,4 @@
-from .models import Chapter, Verse
+from .models import Chapter, Verse, Book
 from rest_framework import generics
 from .serializers import ChapterSerializer, VerseSerializer, BookSerializer
 
