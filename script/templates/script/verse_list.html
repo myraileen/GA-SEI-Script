@@ -3,12 +3,12 @@
 <h2>All Verses
     <a class="controls" href="{% url 'verse_create' %}">(add verse)</a>
 </h2>
-<ol>
+<ul>
   {% for verse in verses %}
   <li>
-    <a href="{% url 'verse_detail' pk=verse.pk %}">{{ verse.verse }}</a>
+    <a href="{% url 'verse_detail' pk=verse.pk %}">{{ verse.chapter.book }} {{ verse.chapter.chapter_num }} Verse {{verse.verse_num}}. {{ verse.verse }}</a>
   </li>
   {% endfor %}
-</ol>
+</ul>
 
 {% endblock %}
