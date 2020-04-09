@@ -2,6 +2,7 @@
 
 ## Project links
 * [Repository](https://github.com/myraileen/GA-SEI-Script)
+* [Deployment](https://chapverse.herokuapp.com/books/)
 
 ## Overview
 This project overlays a user interface built using Python, Django and Postsql datbase with full CRUD on book chapter and verse models. The non-user data models this project demonstrates is "Chapter" and "Verse". 
