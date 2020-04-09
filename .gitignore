@@ -1,3 +1,5 @@
 .env/
 .vscode/
 util
+__pycache__/
+.DS_Store
