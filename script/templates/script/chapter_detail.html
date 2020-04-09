@@ -1,6 +1,6 @@
 {% extends 'script/base.html' %} {% block content %}
 <h2>
-    {{ chapter.book }} {{ chapter.chapter_num }}
+    {{ chapter.book }} {{ chapter.chapter_num }} {{ chapter.pk }}
     <a class="controls" href="{% url 'chapter_edit' pk=chapter.pk%}">(edit chapter)</a>
     <a class="controls delete" href="{% url 'chapter_delete' pk=chapter.pk%}">(delete chapter)</a>
 </h2>
@@ -8,7 +8,7 @@
     {{ chapter.description }}
 </p>
 <h3>Verses
-    <a class="controls" href="{% url 'verse_create' %}">(add verse)</a>
+    <a class="controls" href="{% url 'verse_create'  %}">(add verse)</a>
 </h3>
 <ul>
   {% for verse in chapter.verses.all %}
