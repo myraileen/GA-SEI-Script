@@ -49,6 +49,7 @@ This project overlays a user interface built using Python, Django and Postsql da
 I'd like to leverage python more (my knowledge is too high level at this point) to do the following: 
 * Use the django json module to create a database seed migration file from reading json input converted to a python dictionary that can be passed into the postgres db.
 * Get data from the 'current page' to pass into the view as variables (for example, after creating a verse, I'd rather send user to the chapter detail page with the chapter pk instead of redirecting user to the verse detail with the newly created verse id. Another example would be 'forward' and 'backward' buttons on the chapter and verse detail views).
+* I'd like to put user prompt to confirm delete (especially parent model with cascading child deletes)
 
 
 ### Credits/References 
