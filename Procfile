@@ -1,1 +1,1 @@
-web: gunicorn GA-SEI-Script.wsgi
+web: gunicorn script_django.wsgi
