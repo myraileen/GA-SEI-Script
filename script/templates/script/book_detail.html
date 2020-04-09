@@ -1,0 +1,20 @@
+{% extends 'script/base.html' %} {% block content %}
+<h2>
+    {{ book.book }} ({{ book.version }})
+    <a class="controls" href="{% url 'book_edit' pk=book.pk%}">(edit book)</a>
+    <a class="controls delete" href="{% url 'book_delete' pk=book.pk%}">(delete book)</a>
+</h2>
+<p>
+    {{ book.description }}
+</p>
+<h3>Chapters
+    <a class="controls" href="{% url 'chapter_create' %}">(add chapter)</a>
+</h3>
+<ul>
+  {% for chapter in book.chapters.all %}
+  <li>
+    <a href="{% url 'chapter_detail' pk=chapter.pk %}">{{ chapter.chapter_num }}. {{ chapter.chapter }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

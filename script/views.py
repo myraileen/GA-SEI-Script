@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Chapter, Verse
-from .forms import ChapterForm, VerseForm
+from .models import Chapter, Verse, Book
+from .forms import ChapterForm, VerseForm, BookForm
 
 # Chapter Views
 @login_required
@@ -80,3 +80,42 @@ def verse_edit(request, pk):
 def verse_delete(request,pk):
     Verse.objects.get(id=pk).delete()
     return redirect('verse_list')
+
+# Book Views
+@login_required
+def book_list(request):
+    books = Book.objects.order_by('book_num') 
+    return render(request, 'script/book_list.html', {'books': books})
+
+@login_required
+def book_detail(request, pk):
+    book = Book.objects.get(id=pk)
+    return render(request, 'script/book_detail.html', {'book': book})
+
+@login_required
+def book_create(request):
+    if request.method == 'POST':
+        form = BookForm(request.POST)
+        if form.is_valid():
+            book = form.save()
+            return redirect('book_detail', pk=book.pk)
+    else:
+        form = BookForm()
+    return render(request, 'script/book_form.html', {'form': form})
+
+@login_required
+def book_edit(request, pk):
+    book = Book.objects.get(pk=pk)
+    if request.method == "POST":
+        form = BookForm(request.POST, instance=book)
+        if form.is_valid():
+            book = form.save()
+            return redirect('book_detail', pk=book.pk)
+    else:
+        form = BookForm(instance=book)
+    return render(request, 'script/book_form.html', {'form': form})
+
+@login_required
+def book_delete(request,pk):
+    Book.objects.get(id=pk).delete()
+    return redirect('book_list')
