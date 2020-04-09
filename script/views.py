@@ -1,6 +1,27 @@
-from django.http import JsonResponse
+from .models import Chapter, Verse
+from rest_framework import generics
+from .serializers import ChapterSerializer, VerseSerializer, BookSerializer
 
-def book_list(request):
-    books = Book.objects.all().values('name', 'nationality', 'photo_url') # only grab some attributes from our database, else we can't serialize it.
-    books_list = list(books) # convert our books to a list instead of QuerySet
-    return JsonResponse(books_list, safe=False) # safe=False is needed if the first parameter is not a dictionary.
+class ChapterList(generics.ListCreateAPIView):
+    queryset = Chapter.objects.all()
+    serializer_class = ChapterSerializer
+
+class ChapterDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Chapter.objects.all()
+    serializer_class = ChapterSerializer
+
+class VerseList(generics.ListCreateAPIView):
+    queryset = Verse.objects.all()
+    serializer_class = VerseSerializer
+
+class VerseDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Verse.objects.all()
+    serializer_class = VerseSerializer
+
+class BookList(generics.ListCreateAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+class BookDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
