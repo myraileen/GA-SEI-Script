@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Chapter, Verse, Book
 
-
 class BookSerializer(serializers.HyperlinkedModelSerializer):
     chapters = serializers.HyperlinkedRelatedField(
         view_name='chapter_detail',

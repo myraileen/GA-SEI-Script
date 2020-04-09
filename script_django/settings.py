@@ -26,11 +26,19 @@ SECRET_KEY = 'tovdzn)hw#3*uuiv-q6p8ul@f(k$0to$#bdd8c%s271xujn5vc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://chapverse.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = '/'
 
 # Application definition
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,6 +50,7 @@ INSTALLED_APPS = [
     'accounts',
     'script',
     'rest_framework',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -55,14 +64,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'script_django.urls'
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
 
 TEMPLATES = [
     {
@@ -83,19 +84,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'script_django.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'myscriptdb',
-#         'USER': 'masterscript',
-#         'PASSWORD': 'zero0000',
-#         'HOST': 'myscriptdb.cquppea5r7hg.us-east-2.rds.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
 
 
 DATABASES = {
@@ -145,7 +134,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/' 
 
 #django_heroku.settings(locals())
