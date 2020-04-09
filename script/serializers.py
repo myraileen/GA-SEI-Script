@@ -14,7 +14,7 @@ class BookSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Book
-        fields = ('id', 'book_url', 'photo_url', 'nationality', 'name', 'chapters',)
+        fields = ('version', 'book_num', 'book', 'description', 'image_url', 'chapters',)
 
 class ChapterSerializer(serializers.HyperlinkedModelSerializer):
     verses = serializers.HyperlinkedRelatedField(
@@ -29,7 +29,7 @@ class ChapterSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Chapter
-        fields = ('id', 'chapter_url', 'photo_url', 'nationality', 'name', 'verses',)
+        fields = ('book', 'chapter_num', 'chapter', 'description', 'image_url', 'verses',)
 
 class VerseSerializer(serializers.HyperlinkedModelSerializer):
     chapter = serializers.HyperlinkedRelatedField(
@@ -43,4 +43,4 @@ class VerseSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Verse
-        fields = ('id', 'verse_url', 'preview_url', 'album', 'title', 'chapter',)
+        fields = ('verse_num', 'verse', 'image_url', 'chapter',)
