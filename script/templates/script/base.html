@@ -1,13 +1,14 @@
-{% load static %} 
+{% load static %}
 <html>
   <head>
     <title>Chapter & Verse</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body>
     <h1>Chapter & Verse</h1>
     <nav>
-      <a href="/">Chapter</a>
+      <a href="/">Books</a>
+      <a href="/">Chapters</a>
       <a href="/verses">Verses</a>
       <div class="user-info">
         {% if user.is_authenticated %} Welcome, {{ user.username }}

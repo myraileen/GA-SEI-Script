@@ -2,7 +2,7 @@
 <h2>
     {{ chapter.book }} {{ chapter.chapter_num }}
     <a class="controls" href="{% url 'chapter_edit' pk=chapter.pk%}">(edit chapter)</a>
-    <a class="controls" href="{% url 'chapter_delete' pk=chapter.pk%}">(delete chapter)</a>
+    <a class="controls delete" href="{% url 'chapter_delete' pk=chapter.pk%}">(delete chapter)</a>
 </h2>
 <p>
     {{ chapter.description }}
@@ -10,12 +10,11 @@
 <h3>Verses
     <a class="controls" href="{% url 'verse_create' %}">(add verse)</a>
 </h3>
-<ol>
+<ul>
   {% for verse in chapter.verses.all %}
   <li>
-    <a href="{% url 'verse_detail' pk=verse.pk %}">{{ verse.verse }}</a>
-    <img src="{{ verse.image_url }}" alt="" class="artist-photo" />
+    <a href="{% url 'verse_detail' pk=verse.pk %}">{{ verse.verse_num }}. {{ verse.verse }}</a>
   </li>
   {% endfor %}
-</ol>
+</ul>
 {% endblock %}

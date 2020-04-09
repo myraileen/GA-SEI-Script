@@ -7,7 +7,7 @@
 </h2>
 <h3>
     Verse {{ verse.verse_num }}. {{ verse.verse }}
-  <a href="{% url 'verse_edit' pk=verse.pk %}">(edit verse)</a>
-  <a href="{% url 'verse_delete' pk=verse.pk %}">(delete verse)</a>
+  <a class='controls' href="{% url 'verse_edit' pk=verse.pk %}">(edit verse)</a>
+  <a class='controls delete' href="{% url 'verse_delete' pk=verse.pk %}">(delete verse)</a>
 </h3>
 {% endblock %}

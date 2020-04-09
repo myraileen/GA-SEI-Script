@@ -1,0 +1,137 @@
+/* tunr/static/css/tunr.css */
+*{
+    margin: 0px;
+}
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    max-width: 50em;
+    padding: 1em 1em;
+  }
+
+  nav {
+    margin-top:30px;
+    margin-bottom:40px;
+  }
+  
+  nav a {
+    border: 1px solid black;
+    margin: 0.4em;
+    padding: 0.4em;
+    background-color: #eeeeee;
+  }
+  
+  nav a:hover {
+    background-color: orange;
+    color: blue;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: none;
+    color: blue;
+  }
+  
+  a:hover {
+    background-color: #ccc;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    margin: 0.25em;
+    padding-bottom: 5px;
+  }
+  
+  h2 {
+    font: inherit;
+    color: inherit;
+    font-size: x-large;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+  }
+
+  h3 {
+    font: inherit;
+    color: inherit;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    padding-top: 30px;
+    padding-bottom: 15px;
+  }
+  
+  a.controls {
+    font-size: medium;
+    color: green;
+  }
+  
+  input  {
+    display: block;
+    margin: 5px 0 20px 0;
+    padding: 9px;
+    border: solid 1px black;
+    width: 300px;
+    background: whitesmoke;
+    font-size:medium;
+  }
+textarea {
+    display: block;
+    margin: 5px 0 20px 0;
+    padding: 9px;
+    border: solid 1px black;
+    width: 300px;
+    height: 100px;
+    background: whitesmoke;
+    font-size:medium;
+  }
+  form{
+    padding-top: 20px;
+    width: 300px;
+    justify;
+  }
+  a.delete {
+    color: red;
+  }
+  button {
+      padding:9px;
+      border: solid 1px black;
+    width: 300px;
+    font-size: large;
+    background-color: rgb(171, 204, 176);
+    border-radius: 10px;
+  }
+  select {
+      font-size:medium;
+      
+  }
+  ul {
+      padding-top:20px;
+  }
+  .artist-photo {
+    width: 400px;
+  }
+  
+  span.nationality {
+    font-size: 0.5em;
+  }
+  
+  .user-info {
+    float: right;
+  }
+  
+
+  
+  a.no-fav {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .fav:visited,
+  .no-fav:visited {
+    text-decoration: none;
+  }
