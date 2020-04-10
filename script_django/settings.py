@@ -33,7 +33,7 @@ SOCIAL_AUTH_GITHUB_SECRET = os.getenv("SOCIAL_AUTH_GITHUB_SECRET")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://chapverse.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['https://mychapterapp.herokuapp.com/', 'localhost']
 
 LOGIN_REDIRECT_URL = '/'
 
