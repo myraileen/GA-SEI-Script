@@ -1,6 +1,12 @@
 # tunr/forms.py
 from django import forms
 from .models import Chapter, Verse, Book
+from django.contrib import admin
+
+
+class ConfirmDelete(forms.Form):
+    confirm_delete = forms.CharField(label='Confirm Delete', max_length=20)
+
 
 class ChapterForm(forms.ModelForm):
 

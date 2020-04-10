@@ -2,4 +2,7 @@
 .vscode/
 util
 __pycache__/
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> 2837e40d8a6e3157b4b2984106836ec9c45afc58

@@ -2,7 +2,7 @@
 <h2>
     {{ book.book }} ({{ book.version }})
     <a class="controls" href="{% url 'book_edit' pk=book.pk%}">(edit book)</a>
-    <a class="controls delete" href="{% url 'book_delete' pk=book.pk%}">(delete book)</a>
+    <a ... onclick="return confirm('Are you sure you want to delete this book and all chapters contained?')" class="controls delete" href="{% url 'book_delete' pk=book.pk %}">(delete book)</a>
 </h2>
 <p>
     {{ book.description }}
