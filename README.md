@@ -55,3 +55,5 @@ I'd like to leverage python more (my knowledge is too high level at this point) 
 ### Credits/References 
 * GA-SEI Lessons
 * heroku deployment instructions from https://www.youtube.com/watch?v=6DI_7Zja8Zc
+* Social Authorization reference: https://simpleisbetterthancomplex.com/tutorial/2016/10/24/how-to-add-social-login-to-django.html 
+* hiding keys with dotenv: https://github.com/theskumar/python-dotenv
