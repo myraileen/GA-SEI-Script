@@ -2,7 +2,7 @@
 <h2>
     {{ chapter.book }} {{ chapter.chapter_num }}
     <a class="controls" href="{% url 'chapter_edit' pk=chapter.pk%}">(edit chapter)</a>
-    <a class="controls delete" href="{% url 'chapter_delete' pk=chapter.pk%}">(delete chapter)</a>
+    <a ... onclick="return confirm('Are you sure you want to delete this chapter and all verses contained?')" class="controls delete" href="{% url 'chapter_delete' pk=chapter.pk %}">(delete chapter)</a>
 </h2>
 <p>
     {{ chapter.description }}

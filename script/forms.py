@@ -19,3 +19,9 @@ class BookForm(forms.ModelForm):
     class Meta:
         model = Book
         fields = ('version','book_num','book','description','image_url')
+
+class ConfirmDelete(forms.ModelForm):
+
+    class Meta:
+        model = Chapter
+        fields = ('book','chapter_num','chapter','description','image_url')
