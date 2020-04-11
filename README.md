@@ -6,7 +6,7 @@
 * [REST-api implementation of master branch models](https://github.com/myraileen/GA-SEI-Script/tree/django_rest_api)
 
 ## Overview
-This project overlays a user interface built using Python, Django and Postsql datbase with full CRUD on book chapter and verse models. The non-user data models this project demonstrates is "Chapter" and "Verse". 
+This project overlays a user interface built using Python, Django and Postsql datbase with full CRUD on book chapter and verse models. The non-user data models this project demonstrates is "Book", "Chapter" and "Verse". 
 
 #### MVP requirements:
 
