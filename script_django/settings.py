@@ -31,9 +31,10 @@ SOCIAL_AUTH_GITHUB_KEY = os.getenv("SOCIAL_AUTH_GITHUB_KEY")
 SOCIAL_AUTH_GITHUB_SECRET = os.getenv("SOCIAL_AUTH_GITHUB_SECRET")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = True
 
-ALLOWED_HOSTS = ['mychapterapp.herokuapp.com', 'localhost:8000']
+ALLOWED_HOSTS = ['mychapterapp.herokuapp.com', 'localhost']
+# ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = '/'
 
@@ -92,22 +93,6 @@ AUTHENTICATION_BACKENDS = (
 
 WSGI_APPLICATION = 'script_django.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'myscriptdb',
-#         'USER': 'masterscript',
-#         'PASSWORD': 'zero0000',
-#         'HOST': 'myscriptdb.cquppea5r7hg.us-east-2.rds.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -117,8 +102,6 @@ DATABASES = {
         'HOST': 'localhost'
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

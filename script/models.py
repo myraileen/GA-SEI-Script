@@ -8,6 +8,8 @@ class Book(models.Model):
     description = models.TextField()
     image_url = models.TextField(default='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQSn_PGAQyYvtHTjh61RcvlKIgtFDM2e0IWg8bRMUvS1Bo0_kY5&usqp=CAU', null=True)
 
+    class Meta:
+        ordering=['book','book_num']
     def __str__(self):
         return self.book
 
@@ -19,6 +21,9 @@ class Chapter(models.Model):
     description = models.TextField()
     image_url = models.TextField(default='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT77EfsaCllx-L584gO4MMywRWSr9VyPJxYJhveXHYCppsPNgLP&usqp=CAU', null=True)
 
+    class Meta:
+        ordering=['chapter','chapter_num']
+
     def __str__(self):
         return self.chapter
 
@@ -28,6 +33,9 @@ class Verse(models.Model):
     verse_num = models.PositiveSmallIntegerField()
     verse = models.TextField()
     image_url = models.TextField(null=True)
+
+    class Meta:
+        ordering=['verse_num']
 
     def __str__(self):
         return self.verse
