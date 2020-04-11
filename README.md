@@ -3,7 +3,7 @@
 ## Project links
 * [Repository](https://github.com/myraileen/GA-SEI-Script)
 * [Heroku Deployment](http://mychapterapp.herokuapp.com)
-  [REST-api implementation of master branch models](https://github.com/myraileen/GA-SEI-Script/tree/django_rest_api)
+* [REST-api implementation of master branch models](https://github.com/myraileen/GA-SEI-Script/tree/django_rest_api)
 
 ## Overview
 This project overlays a user interface built using Python, Django and Postsql datbase with full CRUD on book chapter and verse models. The non-user data models this project demonstrates is "Chapter" and "Verse". 
@@ -51,8 +51,8 @@ This project overlays a user interface built using Python, Django and Postsql da
 ### Unsolved Stretch Features/Stories
 I'd like to leverage python more (my knowledge is too high level at this point) to do the following: 
 * Use the django json module to create a database seed migration file from reading json input converted to a python dictionary that can be passed into the postgres db.
-* Get data from the 'current page' to pass into the view as variables (for example, after creating a verse, I'd rather send user to the chapter detail page with the chapter pk instead of redirecting user to the verse detail with the newly created verse id. Another example would be 'forward' and 'backward' buttons on the chapter and verse detail views).
-* I'd like to put user prompt to confirm delete (especially parent model with cascading child deletes)
+* Get data from the 'current page' to pass into the view as variables (for example, after creating a verse, I'd rather send user to the chapter detail page with the chapter pk instead of redirecting user to the verse detail with the newly created verse id. Another example would be 'forward' and 'backward' buttons on the chapter and verse detail views... I'd like feedback here on approaches to research to do this?)
+* I'd like to put a better user prompt for user to to confirm delete (especially parent model with cascading child deletes)... as a alternative to capturing confirmation in a django form, I added inline code to confirm (which I understand is not preferred approach).
 
 
 ### Credits/References 
