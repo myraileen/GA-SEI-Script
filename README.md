@@ -2,7 +2,8 @@
 
 ## Project links
 * [Repository](https://github.com/myraileen/GA-SEI-Script)
-* [Heroku Deployment](https://chapverse.herokuapp.com/books/)
+* [Heroku Deployment](http://mychapterapp.herokuapp.com)
+  [REST-api implementation of master branch models](https://github.com/myraileen/GA-SEI-Script/tree/django_rest_api)
 
 ## Overview
 This project overlays a user interface built using Python, Django and Postsql datbase with full CRUD on book chapter and verse models. The non-user data models this project demonstrates is "Chapter" and "Verse". 
@@ -14,7 +15,9 @@ This project overlays a user interface built using Python, Django and Postsql da
    * Django built-in authentication requires sign-up/login.  
 
 #### Stretch requirements:
-   * Deployed with Heroku. _(I tried deploying with AWS: I was able to create the Postgres database with Amazon RDS, but was not able to connect to do the makemigrations)._
+   * Implemented social authorization from Github account using the social-auth-app-django library.
+   * Deployed master repository branch using Heroku. _(I tried deploying with AWS: I was able to create the Postgres database with Amazon RDS, but was not able to connect to do the makemigrations)._
+   * Created code branch 'django_rest_api' that renders and represents the models as a REST api service. (Will seek more learning here to use in project 4!)
 
 ---
 
@@ -56,4 +59,4 @@ I'd like to leverage python more (my knowledge is too high level at this point) 
 * GA-SEI Lessons
 * heroku deployment instructions from https://www.youtube.com/watch?v=6DI_7Zja8Zc
 * Social Authorization reference: https://simpleisbetterthancomplex.com/tutorial/2016/10/24/how-to-add-social-login-to-django.html 
-* hiding keys with dotenv: https://github.com/theskumar/python-dotenv
+* hiding keys/environment variables using dotenv: https://github.com/theskumar/python-dotenv
