@@ -2,7 +2,7 @@
 
 ## Project links
 * [Repository](https://github.com/myraileen/GA-SEI-Script)
-* [Heroku Deployment](http://mychapterapp.herokuapp.com)
+* [Heroku Deployment](https://mychapterapp.herokuapp.com)
 * [REST-api implementation of master branch models](https://github.com/myraileen/GA-SEI-Script/tree/django_rest_api)
 
 ## Overview
